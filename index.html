@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TKCLUBV587</title>
+    <style>
+        :root {
+            --neon-cyan: #00f7c5;
+            --neon-green: #0bffa5;
+            --neon-red: #ff2e2e;
+            --glass-bg: rgba(0, 0, 0, 0.95);
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            height: 100%; width: 100%;
+            overflow: hidden;
+            background: #000;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        iframe#bg-site {
+            width: 100%; height: 100%;
+            border: none; position: absolute;
+            top: 0; left: 0; z-index: 1;
+        }
+
+        #predictionBox {
+            position: fixed;
+            top: 150px;
+            left: 50px;
+            width: 190px;
+            background: var(--glass-bg);
+            border-radius: 25px;
+            z-index: 99999;
+            cursor: move;
+            user-select: none;
+            border-top: 3px solid rgba(255, 255, 255, 0.3);
+            border-bottom: 5px solid rgba(0, 0, 0, 0.8);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 1), 0 0 15px rgba(0, 247, 197, 0.2);
+            touch-action: none;
+        }
+
+        .inner-screen {
+            margin: 10px;
+            padding: 15px 5px;
+            background: #0a0a0a;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        #boxTitle {
+            font-size: 11px;
+            font-weight: 900;
+            color: var(--neon-cyan);
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 8px var(--neon-cyan);
+        }
+
+        .res-val {
+            font-size: 30px;
+            font-weight: 900;
+            margin: 5px 0;
+        }
+
+        .big { color: var(--neon-green); text-shadow: 0 0 15px var(--neon-green); }
+        .small { color: var(--neon-red); text-shadow: 0 0 15px var(--neon-red); }
+
+        .sub-info { font-size: 10px; color: #bbb; margin-top: 5px; font-weight: bold; }
+        .timer { font-size: 14px; color: #fff; margin-top: 8px; font-family: monospace; background: #222; padding: 2px 8px; border-radius: 5px; display: inline-block; border: 1px solid var(--neon-cyan); }
+
+        input {
+            width: 80%; padding: 10px;
+            background: #000; border: 1px solid var(--neon-cyan);
+            color: #fff; border-radius: 10px;
+            text-align: center; margin-bottom: 10px; outline: none;
+        }
+
+        button {
+            width: 85%; padding: 10px;
+            background: var(--neon-cyan); color: #000;
+            font-weight: 900; border: none;
+            border-radius: 10px; cursor: pointer;
+        }
+
+        .tg-btn {
+            display: block; margin-top: 15px;
+            text-decoration: none; color: #fff;
+            background: #24A1DE; padding: 8px;
+            border-radius: 10px; font-size: 10px; font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<iframe id="bg-site" src="https://tkclub2.com/#/register?invitationCode=76588100825"><https://tkclub2.com/#/home/AllLotteryGames/WinGo?id=1></iframe>
+
+<div id="predictionBox">
+    <div class="inner-screen">
+        <div id="boxTitle">TKCLUBV587</div>
+        
+        <div id="loginUI">
+            <input type="text" id="accessKey" placeholder="ENTER PASS">
+            <button onclick="checkKey()">ACTIVATE</button>
+        </div>
+
+        <div id="predictionUI" style="display:none;">
+            <div id="p_val" class="res-val big">---</div>
+            <div id="p_num_color" class="sub-info">NUM: ? | COLOR: ?</div>
+            <div id="p_id" class="sub-info">PERIOD: Loading...</div>
+            <div id="timer" class="timer">00:30</div>
+        </div>
+
+        <a href="https://t.me/+FdMf_SJE-ONlZWE1" target="_blank" class="tg-btn">PREMIUM HACK</a>
+    </div>
+</div>
+
+<script>
+    // ড্র্যাগিং সিস্টেম
+    const dragItem = document.querySelector("#predictionBox");
+    let active = false, currentX, currentY, initialX, initialY, xOffset = 0, yOffset = 0;
+
+    function dragStart(e) {
+        let event = e.type === "touchstart" ? e.touches[0] : e;
+        initialX = event.clientX - xOffset;
+        initialY = event.clientY - yOffset;
+        if (e.target === dragItem || dragItem.contains(e.target)) active = true;
+    }
+    function dragEnd() { initialX = currentX; initialY = currentY; active = false; }
+    function drag(e) {
+        if (active) {
+            e.preventDefault();
+            let event = e.type === "touchmove" ? e.touches[0] : e;
+            currentX = event.clientX - initialX;
+            currentY = event.clientY - initialY;
+            xOffset = currentX; yOffset = currentY;
+            dragItem.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+        }
+    }
+
+    window.addEventListener("touchstart", dragStart, {passive: false});
+    window.addEventListener("touchend", dragEnd, {passive: false});
+    window.addEventListener("touchmove", drag, {passive: false});
+    window.addEventListener("mousedown", dragStart);
+    window.addEventListener("mouseup", dragEnd);
+    window.addEventListener("mousemove", drag);
+
+    // পাসওয়ার্ড ভেরিফিকেশন (Pass: 221133)
+    function checkKey() {
+        const pass = document.getElementById("accessKey").value;
+        if(pass === "221133") {
+            document.getElementById("loginUI").style.display = "none";
+            document.getElementById("predictionUI").style.display = "block";
+            updateMarketData();
+            startMainEngine();
+        } else {
+            alert("ভুল পাসওয়ার্ড মামা!");
+        }
+    }
+
+    function updateMarketData() {
+        let now = new Date();
+        let year = now.getFullYear();
+        let month = (now.getMonth() + 1).toString().padStart(2, '0');
+        let day = now.getDate().toString().padStart(2, '0');
+        
+        // ৩০ সেকেন্ড মার্কেটের লজিক:
+        // ১ দিনে মোট ১৪৪০ মিনিট। প্রতি মিনিটে ২টি রাউন্ড।
+        // সিরিয়াল নম্বর = (ঘন্টা * ১২০) + (মিনিট * ২) + (সেকেন্ড >= ৩০ হলে ১, না হলে ০) + ১
+        let totalMinutes = (now.getHours() * 60) + now.getMinutes();
+        let periodSerial = (totalMinutes * 2) + (now.getSeconds() >= 30 ? 2 : 1);
+        
+        // পিরিয়ড ফরম্যাট: YYYYMMDD + ১০ + ৪ ডিজিটের সিরিয়াল
+        let fullPeriod = `${year}${month}${day}01${periodSerial.toString().padStart(4, '0')}`;
+        document.getElementById("p_id").innerText = `PERIOD: ${fullPeriod}`;
+
+        // র‍্যান্ডম সিগন্যাল জেনারেশন
+        const res = Math.random() > 0.5 ? "BIG" : "SMALL";
+        const num = Math.floor(Math.random() * 10);
+        const color = (num === 0 || num === 5) ? "VIOLET" : (num % 2 === 0 ? "RED" : "GREEN");
+        
+        document.getElementById("p_val").innerText = res;
+        document.getElementById("p_val").className = "res-val " + res.toLowerCase();
+        document.getElementById("p_num_color").innerText = `NUM: ${num} | COLOR: ${color}`;
+    }
+
+    function startMainEngine() {
+        setInterval(() => {
+            let now = new Date();
+            let seconds = now.getSeconds();
+            let remaining = 30 - (seconds % 30);
+            
+            document.getElementById("timer").innerText = "00:" + (remaining < 10 ? "0" + remaining : remaining);
+            
+            // যখন ৩০ বা ০ সেকেন্ডে পৌঁছাবে, তখন পিরিয়ড আইডি ১ বাড়বে এবং নতুন সিগন্যাল আসবে
+            if (remaining === 30) {
+                updateMarketData();
+            }
+        }, 1000);
+    }
+</script>
+
+
+<style>.qc-cmp-showing { visibility: hidden !important; } body.didomi-popup-open { overflow: auto !important; } #didomi-host { visibility: hidden !important; }</style></body></html>
